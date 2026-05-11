@@ -4,15 +4,13 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.io.File;
 public class UFOReader{
-    public void readFromFile() throws IOException {
+    public ArrayList<String> readFromFile() throws IOException {
         File file = new File("UFOs_coords.csv");
         Scanner scan = new Scanner(file);
-        String[] arr = new String[0];
+        ArrayList<String> data = new ArrayList<>();
         while(scan.hasNextLine()){
-            arr = scan.nextLine().split(",");
+            data.add(scan.nextLine());
         }
-        ArrayList<String> list = new ArrayList<>(Arrays.asList(arr));
+        return data;
     }
 }
-
-

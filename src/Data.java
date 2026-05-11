@@ -50,6 +50,9 @@ public class Data {
     void sortByShape() {
         reports.sort(UFOReport.getShapeComparator());
     }
+    void sortByCountry() {
+        reports.sort(UFOReport.getCountryComparator());
+    }
 
     ArrayList<UFOReport> searchState(String state) {
         ArrayList<UFOReport> result = new ArrayList<>();
@@ -86,6 +89,19 @@ public class Data {
             }
         }
         return result;
+    }
+    public String totalSightingsPerCountry(){
+        int USA = 0;
+        int Canada = 0;
+        for(UFOReport report : reports) {
+            if(report.country.equals("USA")){
+                USA++;
+            }
+            else if(report.country.equals("Canada")){
+                Canada++;
+            }
+        }
+        return "Usa " + USA + "\nCanada " + Canada;
     }
     public String getMostCommonShape(){
         ArrayList<Integer> shapes = new ArrayList<>(6);

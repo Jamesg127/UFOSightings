@@ -92,18 +92,14 @@ public class Data {
         }
         return result;
     }
-    public String getTotalSightingsPerCountry(){
-        int USA = 0;
-        int Canada = 0;
+    public HashMap<String, Integer> getTotalSightingsPerCountry() {
+        HashMap<String, Integer> countries = new HashMap<>();
         for(UFOReport report : reports) {
-            if(report.country.equals("USA")){
-                USA++;
-            }
-            else if(report.country.equals("Canada")){
-                Canada++;
+            if(!countries.containsKey(report.country)) {
+                states.put(report.country, 1);
             }
         }
-        return "Usa " + USA + "\nCanada " + Canada;
+        return countries;
     }
     public String getMostCommonShape(){
         HashMap<String, Integer> shapes = new HashMap<>();

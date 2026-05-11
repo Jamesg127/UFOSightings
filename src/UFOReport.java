@@ -41,6 +41,14 @@ public class UFOReport {
             }
         };
     }
+    static Comparator<UFOReport> getCountryComparator() {
+        return new Comparator<UFOReport>() {
+            @Override
+            public int compare(UFOReport o1, UFOReport o2) {
+                return o1.country.compareTo(o2.country);
+            }
+        };
+    }
     static Comparator<UFOReport> getStateComparator() {
         return new Comparator<UFOReport>() {
             @Override

@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.io.File;
 public class UFOReader{
-    public ArrayList<String> readFromFile() throws IOException {
+    public static ArrayList<String> readFromFile() throws IOException {
         File file = new File("UFOs_coords.csv");
         Scanner scan = new Scanner(file);
         String[] arr = new String[0];

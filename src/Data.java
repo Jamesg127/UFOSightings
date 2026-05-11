@@ -92,7 +92,7 @@ public class Data {
         }
         return result;
     }
-    public String totalSightingsPerCountry(){
+    public String getTotalSightingsPerCountry(){
         int USA = 0;
         int Canada = 0;
         for(UFOReport report : reports) {

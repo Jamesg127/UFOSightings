@@ -9,15 +9,15 @@ public class Data {
     }
 
     void sortByDate() {
-        Collections.sort(reports, UFOReport.getDateComparator());
+        reports.sort(UFOReport.getDateComparator());
     }
     void sortByCity() {
-        Collections.sort(reports, UFOReport.getCityComparator());
+        reports.sort(UFOReport.getCityComparator());
     }
     void sortByState() {
-        Collections.sort(reports, UFOReport.getStateComparator());
+        reports.sort(UFOReport.getStateComparator());
     }
     void sortByShape() {
-        Collections.sort(reports, UFOReport.getShapeComparator());
+        reports.sort(UFOReport.getShapeComparator());
     }
 }

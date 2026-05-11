@@ -51,6 +51,40 @@ public class Data {
         reports.sort(UFOReport.getShapeComparator());
     }
 
-    ArrayList searchState(String state) {
+    ArrayList<UFOReport> searchState(String state) {
+        ArrayList<UFOReport> result = new ArrayList<>();
+        for(UFOReport report : reports) {
+            if(report.state.equals(state)) {
+                result.add(report);
+            }
+        }
+        return result;
+    }
+    ArrayList<UFOReport> searchCity(String city) {
+        ArrayList<UFOReport> result = new ArrayList<>();
+        for(UFOReport report : reports) {
+            if(report.city.equals(city)) {
+                result.add(report);
+            }
+        }
+        return result;
+    }
+    ArrayList<UFOReport> searchShape(String shape) {
+        ArrayList<UFOReport> result = new ArrayList<>();
+        for(UFOReport report : reports) {
+            if(report.shape.equals(shape)) {
+                result.add(report);
+            }
+        }
+        return result;
+    }
+    ArrayList<UFOReport> searchKeyword(String keyword) {
+        ArrayList<UFOReport> result = new ArrayList<>();
+        for(UFOReport report : reports) {
+            if(report.summary.contains(keyword)) {
+                result.add(report);
+            }
+        }
+        return result;
     }
 }

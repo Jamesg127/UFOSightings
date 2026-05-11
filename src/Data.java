@@ -6,6 +6,8 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Data {
     ArrayList<UFOReport> reports;
@@ -135,5 +137,15 @@ public class Data {
             }
         }
         return maxString;
+    }
+
+    public String getMostCommonState() {
+        HashMap<String, Integer> states = new HashMap<>();
+        for(UFOReport report : reports) {
+            if(!states.containsKey(report.state)) {
+                states.put(report.state, 1);
+            }
+        }
+        return Collections.max(states.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 }

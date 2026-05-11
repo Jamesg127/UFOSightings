@@ -9,7 +9,19 @@ public class Main {
         if (inpalimpa == 1) {
             System.out.println("How wouldyou like to sort the data?");
             System.out.println("Sort by:\n1) Data\n2) City\n3) State\n4) Shape");
+            int sort = scan.nextInt();
+            if (sort == 1) {
 
+            }
+            else if (sort == 2) {
+
+            }
+            else if (sort == 3) {
+
+            }
+            else if (sort == 4) {
+
+            }
         }
         else if (inpalimpa == 2) {
 

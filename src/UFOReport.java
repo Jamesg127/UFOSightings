@@ -11,6 +11,17 @@ public class UFOReport {
     double lat;
     double lng;
 
+    public UFOReport(Instant dateTime, String country, String city, String state, String shape, String summary, double lat, double lng) {
+        this.dateTime = dateTime;
+        this.country = country;
+        this.city = city;
+        this.state = state;
+        this.shape = shape;
+        this.summary = summary;
+        this.lat = lat;
+        this.lng = lng;
+    }
+
     static Comparator<UFOReport> getDateComparator() {
         return new Comparator<UFOReport>() {
             @Override

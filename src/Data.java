@@ -90,53 +90,13 @@ public class Data {
         return result;
     }
     public String getMostCommonShape(){
-        ArrayList<Integer> shapes = new ArrayList<>(6);
+        HashMap<String, Integer> shapes = new HashMap<>();
         for(UFOReport report : reports) {
-            if(report.shape.equals("Circle")){
-                shapes.set(0, shapes.get(0) + 1);
-            }
-            if(report.shape.equals("Sphere")){
-                shapes.set(1, shapes.get(1) + 1);
-            }
-            if(report.shape.equals("Cylinder")){
-                shapes.set(2, shapes.get(2) + 1);
-            }
-            if(report.shape.equals("triangle")){
-                shapes.set(3, shapes.get(3) + 1);
-            }
-            if(report.shape.equals("Unknown")){
-                shapes.set(4, shapes.get(4) + 1);
-            }
-            else{
-                shapes.set(5, shapes.get(5) + 1);
+            if(!shapes.containsKey(report.shape)) {
+                shapes.put(report.shape, 1);
             }
         }
-        int max = -1;
-        String maxString = "";
-        for(int i = 0; i < shapes.size(); i++){
-            if (shapes.get(i) > max){
-                max = shapes.get(i);
-                if(i == 0){
-                    maxString = "Circle";
-                }
-                if(i == 1){
-                    maxString = "Sphere";
-                }
-                if(i == 2){
-                    maxString = "Cylinder";
-                }
-                if(i == 3){
-                    maxString = "triangle";
-                }
-                if(i == 4){
-                    maxString = "Unknown";
-                }
-                if(i == 5){
-                    maxString = "Abstract";
-                }
-            }
-        }
-        return maxString;
+        return Collections.max(shapes.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 
     public String getMostCommonState() {

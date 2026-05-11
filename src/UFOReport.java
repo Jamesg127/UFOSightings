@@ -1,4 +1,7 @@
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.Comparator;
 
 public class UFOReport {
@@ -53,5 +56,10 @@ public class UFOReport {
                 return o1.shape.compareTo(o2.shape);
             }
         };
+    }
+
+    @Override
+    public String toString() {
+        return LocalDateTime.ofInstant(dateTime, ZoneOffset.UTC).toString() + "in " + city + ", " + state + ". Saw " + shape;
     }
 }
